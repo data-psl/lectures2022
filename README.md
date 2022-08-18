@@ -1,7 +1,7 @@
 # Machine learning preparatory week @PSL
 
 ## Lectures
-### Machine learning part (from Monday to Thursday)
+### Machine learning part (from Monday to Friday)
 
   1. [Machine learning: history, application, successes](https://data-psl.github.io/lectures2022/slides/01_machine_learning_successes)
   2. [Introduction to machine learning](https://data-psl.github.io/lectures2022/slides/02_intro_to_machine_learning)
@@ -12,10 +12,10 @@
   7. [Deep learning: convolutional neural networks](https://data-psl.github.io/lectures2022/slides/07_deep_learning/)
   8. [Unsupervised learning](https://data-psl.github.io/lectures2022/slides/08_unsupervised_learning/)
 
-### Spark and Machine Learning (Friday)
+### Spark and Machine Learning (Wednesday and Friday afternoons)
 [Slides from Dario Colazzo](https://data-psl.github.io/lectures2022/slides/psl-pw2021-colazzo.pdf)
 
-### Ethics and Fairness (Saturday)
+### Ethics and Fairness (Wednesday morning)
 [Slides from Thierry Kirat](https://data-psl.github.io/lectures2022/slides/psl-pw2021-kirat.pdf)
 
 
@@ -26,8 +26,8 @@ Links open Colab notebooks. You may also clone this repository and work locally.
 
  1. Monday: [Python basics](https://colab.research.google.com/github/data-psl/lectures2022/blob/master/notebooks/01_python_basics.ipynb)
  2. Tuesday: [Practice of Scikit-learn](https://github.com/data-psl/lectures2022/tree/master/notebooks/02_sklearn)
- 3. Wednesday: [Optimization](https://colab.research.google.com/github/data-psl/lectures2022/blob/master/notebooks/03_optimization.ipynb) and the [Corrected notebook](https://colab.research.google.com/github/data-psl/lectures2022/blob/master/notebooks/03_optimization_corrected.ipynb)
- 4. Thursday: Classification with PyTorch and GPUs [Notebook 1](https://colab.research.google.com/github/data-psl/lectures2022/blob/main/notebooks/04_pytorch/01_introduction_to_pytorch.ipynb) [Notebook 2](https://colab.research.google.com/github/data-psl/lectures2022/blob/main/notebooks/04_pytorch/02_simple_neural_network.ipynb) [Notebook 3](https://colab.research.google.com/github/data-psl/lectures2022/blob/main/notebooks/04_pytorch/03_convolutional_neural_network_mnist.ipynb)
+ 3. Thursday: [Optimization](https://colab.research.google.com/github/data-psl/lectures2022/blob/master/notebooks/03_optimization.ipynb) and the [Corrected notebook](https://colab.research.google.com/github/data-psl/lectures2022/blob/master/notebooks/03_optimization_corrected.ipynb)
+ 4. At home: Classification with PyTorch and GPUs [Notebook 1](https://colab.research.google.com/github/data-psl/lectures2022/blob/main/notebooks/04_pytorch/01_introduction_to_pytorch.ipynb) [Notebook 2](https://colab.research.google.com/github/data-psl/lectures2022/blob/main/notebooks/04_pytorch/02_simple_neural_network.ipynb) [Notebook 3](https://colab.research.google.com/github/data-psl/lectures2022/blob/main/notebooks/04_pytorch/03_convolutional_neural_network_mnist.ipynb)
 
 ## Teachers
 
