@@ -95,7 +95,7 @@ with labels $\mathbf{y} \in \mathbb{R}^n$
 
 - Learn $\hat \theta$ with $(\mathbf{X}\_{train}, \mathbf{y}\_{train})$ (**Fit**)
 
-- $\hat y\_{test} = f\_{\hat \theta}(X\_{test})$ (**Predict**) 
+- $\hat y\_{test} = f\_{\hat \theta}(X\_{test})$ (**Predict**)
 
 - Compare $\hat y\_{test}$ and $y\_{test}$ (**Score**)
 
@@ -160,7 +160,7 @@ X, y = iris['data'], iris['target']  # type: np.ndarray
 ---
 # Splitting the data
 
-- Evaluate a certain model $f\_{\theta}$ 
+- Evaluate a certain model $f\_{\theta}$
 over new data
 
 - Split $\mathbf{X}$, $\mathbf{y}$ into training and evaluation examples
@@ -460,7 +460,7 @@ plot_confusion_matrix(estimator, X_test, y_test)
 
 ---
 # Pipelines
- 
+
 - A way to chain multiple transformations with a final estimator
 
 ```python
@@ -597,7 +597,7 @@ X, y = make_classification(n_samples=200,
 km = KMeans(n_clusters=4)
 km.fit(X)
 
-# Cluster assignments 
+# Cluster assignments
 y_pred = km.predict(X)
 
 plt.scatter(X[:, 0], X[:, 1], c=y_pred)
@@ -675,7 +675,7 @@ X = column_trans.fit(X)
 
 - A tutorial on `scikit-learn`
 
-- Link available at https://github.com/data-psl/lectures2021
+- Link available at https://github.com/data-psl/lectures2022
 
 .center[
 <img src="images/ml_map.png" style="width: 650px;" />
