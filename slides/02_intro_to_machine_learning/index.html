@@ -101,13 +101,22 @@ class: center, middle
 
 Example 1 : Classifying cats and dogs
 
-- $\mathcal{X} = \text{ Set of all gray scale images of size 64 x 64 }$ is the set of *features*
+Set of features
 
-- $\mathcal{Y} = \{0, 1 \}$ (say $0$ means "cat" and $1$ means "dog") is the set of possible *labels*
+- $\mathcal{X} = \text{ Set of all gray scale images of size 64 x 64 }$
 
-- Given $f \colon \mathcal{X} \to \mathcal{Y}$ a prediction function or *model*
+Set of *labels*:
 
-- Take $x$ a gray scale image of size 64x64, $f(x) = 0$ means the input image is a cat according to the model
+- $\mathcal{Y} = \{0, 1 \}$
+
+where $0$ means dog" and $1$ means cat"
+
+
+Prediction function or *model*
+
+- Given $f \colon \mathcal{X} \to \mathcal{Y}$
+
+Take $x$ a gray scale image of size 64x64, $f(x) = 0$ means the input image is a cat according to the model
 
 ---
 
@@ -130,21 +139,23 @@ Example 2 : Predict salary given age
 
 Training phase
 
-- $X_{train} = (x_1, y_1), \dots, (x_n, y_n) \in \mathcal{X} \times \mathcal{Y}$ ($n$ images of cats or dogs / the age and salary of $n$ diffrent persons)
+- $X_{train} = (x_1, y_1), \dots, (x_n, y_n) \in \mathcal{X} \times \mathcal{Y}$
+
+($n$ images of cats or dogs / the age and salary of $n$ diffrent persons)
 
 - $f$ is chosen based on $X_{train}$ via a *training algorithm*
 
 Inference phase
 
-- Use $f$ chosen on training phase on unseen data $x_{test} \in \mathcal{X}$ (say a new image / a new person)
+- Use $f$ on unseen data $x_{test} \in \mathcal{X}$
 
-- Make a prediction $y_{pred} = f(x_{test})$, where $y_{pred} \in \mathcal{Y}$
+(say a new image / a new person)
+
+- Make a prediction $y_{pred} = f(x_{test})$
 
 # Supervised learning
 
-Feature extraction:
-
-Input features do not have to be identical to input data.
+Feature extraction: Input features do not have to be identical to input data.
 
 Example:
 
@@ -178,20 +189,19 @@ Example:
   - Given the picture of an astronomical object, determine whether it is a star, a galaxy, etc.
   - Given the picture of a person, identify the person
   - Given an email, detect whether it is a spam or not
-  - Given the spectogram of a spoken word, recognize the command being spoken
 
 ---
 # Types of classification
 
 - Binary classification: $\mathcal{Y} = \\{0, 1\\}$
-
 - Multiclass classification: $\mathcal{Y} = [K] = \\{1, \dots, K\\}$
-- Multi-label classification: $\mathcal{Y} = 2^{[K]} = \\{
-\\{\\},
-\\{1\\}, \dots, \\{K\\},
-\\{1,2\\}, \\{1,3\\}, \\{1, K\\},
-\dots, \\{1, \dots, K\\}
-\\}$
+- Multi-label classification: $\mathcal{Y} = \{ 0, 1 \}^K$
+
+Example: The model should predict whether a dog, a lion, or a cat is in the image
+We chose $\mathcal{Y} = \{ 0, 1 \}^K$
+
+$ f(\xb) = (0, 1, 1)$ means the image contains a lion and a cat but not dog according to the model.
+
 
 ---
 # Regression
