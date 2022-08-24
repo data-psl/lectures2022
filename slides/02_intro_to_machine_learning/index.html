@@ -88,19 +88,76 @@ class: center, middle
 
 - Given some input, **predict** some output
 
-- Prediction function $f \colon \mathcal{X} \to \mathcal{Y}$
-
 - Input domain $\mathcal{X}$
 
 - Output domain $\mathcal{Y}$
 
+- Prediction function $f \colon \mathcal{X} \to \mathcal{Y}$
+
 - Calling the function: $y = f(\mathbf{x})$
 
+---
+# Supervised learning
+
+Example 1 : Classifying cats and dogs
+
+- $\mathcal{X} = \text{ Set of all gray scale images of size 64 x 64 }$ is the set of *features*
+
+- $\mathcal{Y} = \{0, 1 \}$ (say $0$ means "cat" and $1$ means "dog") is the set of possible *labels*
+
+- Given $f \colon \mathcal{X} \to \mathcal{Y}$ a prediction function or *model*
+
+- Take $x$ a gray scale image of size 64x64, $f(x) = 0$ means the input image is a cat according to the model
+
+---
+
+# Supervised learning
+
+Example 2 : Predict salary given age
+
+- $\mathcal{X} = \mathbb{R}$ (Set of all possible ages)
+
+- $\mathcal{Y} = \mathbb{R}$ (Set of all possible salaries)
+
+- Given the model $f \colon \mathcal{X} \to \mathcal{Y}$
+
+- Take $x$ the age of a person, $f(x)$ is its predicted salary according to the model
 
 ---
 # Supervised learning
 
 - Learning from examples (inductive learning)
+
+Training phase
+
+- $X_{train} = (x_1, y_1), \dots, (x_n, y_n) \in \mathcal{X} \times \mathcal{Y}$ ($n$ images of cats or dogs / the age and salary of $n$ diffrent persons)
+
+- $f$ is chosen based on $X_{train}$ via a *training algorithm*
+
+Inference phase
+
+- Use $f$ chosen on training phase on unseen data $x_{test} \in \mathcal{X}$ (say a new image / a new person)
+
+- Make a prediction $y_{pred} = f(x_{test})$, where $y_{pred} \in \mathcal{Y}$
+
+# Supervised learning
+
+Feature extraction:
+
+Input features do not have to be identical to input data.
+
+Example:
+
+- Input data = age $a$ of the person
+
+- Input feature is whether the person is older than $50
+ $1_{a > 50}$
+
+- The function $a \to 1_{a > 50}$ is called a *feature extractor*
+
+- We then have $\mathcal{$X} = {0, 1}$ instead of $\mathcal{$X} = \mathbb{R}$
+
+# Supervised learning
 
 - Training phase
 
