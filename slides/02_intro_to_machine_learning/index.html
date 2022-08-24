@@ -101,22 +101,15 @@ class: center, middle
 
 Example 1 : Classifying cats and dogs
 
-Set of features
-
 - $\mathcal{X} = \text{ Set of all gray scale images of size 64 x 64 }$
 
-Set of *labels*:
-
-- $\mathcal{Y} = \{0, 1 \}$
+- $\mathcal{Y} = \\{0, 1 \\}$
 
 where $0$ means dog" and $1$ means cat"
 
-
-Prediction function or *model*
-
 - Given $f \colon \mathcal{X} \to \mathcal{Y}$
 
-Take $x$ a gray scale image of size 64x64, $f(x) = 0$ means the input image is a cat according to the model
+$f(x) = 0$ means the image is a cat according to the model
 
 ---
 
@@ -137,21 +130,21 @@ Example 2 : Predict salary given age
 
 - Learning from examples (inductive learning)
 
-Training phase
+_Training phase_
 
 - $X_{train} = (x_1, y_1), \dots, (x_n, y_n) \in \mathcal{X} \times \mathcal{Y}$
 
-($n$ images of cats or dogs / the age and salary of $n$ diffrent persons)
+Ex: $n$ images of cats or dogs
 
 - $f$ is chosen based on $X_{train}$ via a *training algorithm*
 
-Inference phase
+_Inference phase_
 
 - Use $f$ on unseen data $x_{test} \in \mathcal{X}$
 
-(say a new image / a new person)
+Ex: a new image
 
-- Make a prediction $y_{pred} = f(x_{test})$
+- Make a prediction $ y_{pred} = f(x_{test})$
 
 # Supervised learning
 
