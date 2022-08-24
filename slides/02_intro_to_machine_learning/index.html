@@ -198,9 +198,10 @@ Example:
 - Multi-label classification: $\mathcal{Y} = \{ 0, 1 \}^K$
 
 Example: The model should predict whether a dog, a lion, or a cat is in the image
-We chose $\mathcal{Y} = \{ 0, 1 \}^K$
 
-$ f(\xb) = (0, 1, 1)$ means the image contains a lion and a cat but not dog according to the model.
+We choose $\mathcal{Y} = \{ 0, 1 \}^3$
+
+$ f(\mathbf{x}) = (1, 1, 0)$ means the image $ \xb$ contains a dog and a lion but no cat according to the model.
 
 
 ---
