@@ -16,7 +16,7 @@
 [Slides from Dario Colazzo](https://data-psl.github.io/lectures2022/slides/psl-pw2021-colazzo.pdf)
 
 ### Ethics and Fairness (Wednesday morning)
-[Slides from Thierry Kirat](https://data-psl.github.io/lectures2022/slides/psl-pw2021-kirat.pdf)
+[Slides from Thierry Kirat](https://data-psl.github.io/lectures2022/slides/psl-pw2022-kirat.pdf)
 
 
 
