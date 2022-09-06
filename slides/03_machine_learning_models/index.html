@@ -22,15 +22,14 @@ class: center, middle
 
 # Machine learning models
 
-Pierre Ablin
+Hugo RICHARD
 
 .affiliations[
-  ![École Normale Supérieure](images/logo_ens_psl_couleur.png)
+ENSAE, CREST
 ]
 
-.footnote.tiny[Credits: many contents and figures are borrowed from the scikit-learn [mooc](https://github.com/inria/scikit-learn-mooc/) and scipy
+.footnote.tiny[Credits: Most of slides are from Mathieu Blondel (see [here](https://data-psl.github.io/lectures2021/slides/02_intro_to_machine_learning/#1)). Many contents and figures are borrowed from the scikit-learn [mooc](https://github.com/inria/scikit-learn-mooc/) and scipy
 [lecture notes](https://scipy-lectures.org/packages/scikit-learn/index.html).]
-
 ---
 .center[
 # Recap from yesterday]
@@ -322,16 +321,18 @@ Usual ways to build these regions.
 ]
 
 ---
-# Regression dataset: Boston housing
+# Regression dataset: California housing
 
-Goal: predict the median price of houses in suburbs of Boston given some characteristics (13 features)
+Goal: predict the median price of houses in Canifornia districts given some characteristics (8 features)
 
 --
-- Per capita crime rate
-- Average number of rooms
-- Population employment
-- Level of nitric oxide concentration in the air
+- Median income in block group
+- Median house age in block group
+- Agerage number of rooms per household
+- Number of people in block group
 - ...
+
+Block group = 600 to 3000 people
 
 --
 
@@ -340,31 +341,20 @@ A model takes all these inputs and predicts the median price: **regression**
 ---
 # Illustration in 1-D
 
-To visualize the data, we can plot the target (price) against one feature (e.g. crime rate):
+To visualize the data, we can plot the target (price) against one feature (e.g. median income):
 
 .center[
-<img src="images/boston_1.png" style="width: 600px;" />
+<img src="images/california_1.png" style="width: 600px;" />
 <br/>
 ]
 
 ---
 # Illustration in 1-D
 
-To visualize the data, we can plot the target (price) against one feature (e.g. crime rate):
+To visualize the data, we can plot the target (price) against one feature (e.g. median income):
 
 .center[
-<img src="images/boston_2.png" style="width: 600px;" />
-<br/>
-]
-
-
----
-# Illustration in 1-D
-
-To visualize the data, we can plot the target (price) against one feature (e.g. crime rate):
-
-.center[
-<img src="images/boston_3.png" style="width: 600px;" />
+<img src="images/california_2.png" style="width: 600px;" />
 <br/>
 ]
 --
@@ -377,7 +367,7 @@ There is a clear trend, but perfect prediction of the target is impossible
 A machine learning model would try to predict the target from the feature:
 
 .center[
-<img src="images/boston_31.png" style="width: 600px;" />
+<img src="images/california_3.png" style="width: 600px;" />
 <br/>
 ]
 
@@ -388,7 +378,7 @@ A machine learning model would try to predict the target from the feature:
 Using two features, we can visualize each sample as a point in 2-D, and associate the **target** to a **color**
 
 .center[
-<img src="images/boston_4.png" style="width: 600px;" />
+<img src="images/california_4.png" style="width: 600px;" />
 <br/>
 ]
 
@@ -398,7 +388,7 @@ Using two features, we can visualize each sample as a point in 2-D, and associat
 A machine learning model associates each point with a predicted value
 
 .center[
-<img src="images/boston_5.png" style="width: 600px;" />
+<img src="images/california_5.png" style="width: 600px;" />
 <br/>
 ]
 
@@ -409,7 +399,7 @@ A machine learning model associates each point with a predicted value
 Usual ways to build these regions.
 
 .center[
-<img src="images/boston_5.png" style="width: 600px;" />
+<img src="images/california_5.png" style="width: 600px;" />
 <br/>
 ]
 
@@ -901,29 +891,26 @@ In 2-d, if you only have $2$ points, you can always separate them with a line.
 
 ## Example:
 
-Target $y$: number of covid cases in France in the last 3 days
-
-
-$y = (13466, 13336, 10410)$
+Between 22/08 and 24/08 <br />
+Target $y$: number of new covid cases in France $y = (38 702, 28 988, 21289)$
 
 --
 
 3 features:
 
-- Temperature in Paris in the last 3 days: $x_1 = (27, 30, 31)$
+- Temperature in Paris: $x_1 = (24, 30, 31)$
 
 --
-- Height of the tide in Brest: $x_2 = (5.62, 5.90, 6.26)$
+- Maximum height of the tide in Brest: $x_2 = (5.23, 5.49, 5.82)$
 
 --
-- Number of students in this class $x_3 = (0, 0, 32)$
+- Day number $x_3 = (22, 23, 24)$
 
 --
 
 You can check that:
-
 $$
-y = 34305 \times x_1 -30761 \times x_2 + 325 \times x_3
+y = -1863 \times x_1 -104338 \times x_2 + 28596 \times x_3
 $$
 
 ---

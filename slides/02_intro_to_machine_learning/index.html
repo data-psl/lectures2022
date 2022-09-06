@@ -45,12 +45,12 @@ class: center, middle
 
 # Introduction to Machine Learning
 
-Mathieu Blondel
+Hugo RICHARD
 
 .affiliations[
-Google Research, Brain team
+ENSAE, CREST
 ]
-.footnote.tiny[Credits: many contents and figures are borrowed from the scikit-learn [mooc](https://github.com/inria/scikit-learn-mooc/) and scipy
+.footnote.tiny[Credits: Most of slides are from Mathieu Blondel (see [here](https://data-psl.github.io/lectures2021/slides/02_intro_to_machine_learning/#1)). Many contents and figures are borrowed from the scikit-learn [mooc](https://github.com/inria/scikit-learn-mooc/) and scipy
 [lecture notes](https://scipy-lectures.org/packages/scikit-learn/index.html).]
 ---
 # Scope of this lecture
@@ -88,19 +88,95 @@ class: center, middle
 
 - Given some input, **predict** some output
 
-- Prediction function $f \colon \mathcal{X} \to \mathcal{Y}$
-
 - Input domain $\mathcal{X}$
 
 - Output domain $\mathcal{Y}$
 
+- Prediction function $f \colon \mathcal{X} \to \mathcal{Y}$
+
 - Calling the function: $y = f(\mathbf{x})$
 
+---
+# Supervised learning
+
+Example 1 : Classifying cats and dogs
+
+- $\mathcal{X} = \text{ Set of all gray scale images of size 64 x 64 }$
+
+- $\mathcal{Y} = \\{0, 1 \\}$
+
+where $0$ means dog" and $1$ means cat"
+
+- Given $f \colon \mathcal{X} \to \mathcal{Y}$
+
+$f(x) = 0$ means the image is a cat according to the model
+
+---
+
+# Supervised learning
+
+Example 2 : Predict salary given age
+
+- $\mathcal{X} = \mathbb{R}$ (Set of all possible ages)
+
+- $\mathcal{Y} = \mathbb{R}$ (Set of all possible salaries)
+
+- Given the model $f \colon \mathcal{X} \to \mathcal{Y}$
+
+- Take $ \mathbf{x}$ the age of a person, $f( \mathbf{x})$ is its predicted salary according to the model
 
 ---
 # Supervised learning
 
 - Learning from examples (inductive learning)
+
+_Training phase_
+
+- $X_{train} = (x_1, y_1), \dots, (x_n, y_n) \in \mathcal{X} \times \mathcal{Y}$
+
+Ex: $n$ images of cats or dogs
+
+- $f$ is chosen based on $X_{train}$ via a *training algorithm*
+
+_Inference phase_
+
+- Use $f$ on unseen data $x_{test} \in \mathcal{X}$
+
+---
+# Supervised learning
+
+Feature extraction or Feature engineering
+
+- Samples are often in a raw format
+
+- It is necessary to extract useful features (descriptors) for the prediction task
+
+- Traditional ML: human-designed extraction rules
+
+- Deep learning: learned features representations
+
+---
+# Supervised learning
+
+Feature extraction or Feature engineering
+
+- Predictions as downstream features
+
+
+Example: "is there a pedestrian?" can be used as a feature for automatic breaking
+
+Example 2:
+
+Input data = age $a$ of the person
+
+Input feature is whether the person is older than $50$
+
+The function $a \to 1_{a > 50}$ is called a *feature extractor*
+
+We then have $\mathcal{X} = \\{0, 1\\}$ instead of $\mathcal{X} = \mathbb{R}$
+
+---
+# Supervised learning
 
 - Training phase
 
@@ -115,26 +191,26 @@ class: center, middle
 
 - Given an input, predict the class (category) it belongs to
 
-- $y \in \mathcal{Y}$ is a categorical variable
+- $y \in \mathcal{Y}$ is a categorical variable = $ \mathcal{Y}$ is discrete
 
 - Examples
   - Given the picture of an astronomical object, determine whether it is a star, a galaxy, etc.
   - Given the picture of a person, identify the person
   - Given an email, detect whether it is a spam or not
-  - Given the spectogram of a spoken word, recognize the command being spoken
 
 ---
 # Types of classification
 
 - Binary classification: $\mathcal{Y} = \\{0, 1\\}$
-
 - Multiclass classification: $\mathcal{Y} = [K] = \\{1, \dots, K\\}$
-- Multi-label classification: $\mathcal{Y} = 2^{[K]} = \\{
-\\{\\},
-\\{1\\}, \dots, \\{K\\},
-\\{1,2\\}, \\{1,3\\}, \\{1, K\\},
-\dots, \\{1, \dots, K\\}
-\\}$
+- Multi-label classification: $\mathcal{Y} = \\{ 0, 1 \\}^K$
+
+Example: The model should predict whether a dog, a lion, or a cat is in the image
+
+We choose $\mathcal{Y} = \\{ 0, 1 \\}^3$
+
+$ f(\mathbf{x}) = (1, 1, 0)$ means the image $ \mathbf{x}$ contains a dog and a lion but no cat according to the model.
+
 
 ---
 # Regression
@@ -149,19 +225,6 @@ class: center, middle
  - Given a patient's DNA information, predict his/her life expectancy
  - Given camrea input, predict steering wheel position (autonomous driving)
 
----
-# Feature engineering
-
-- Samples are often in a raw format
-
-- It is necessary to extract useful features (descriptors) for the prediction task
-
-- Traditional ML: human-designed extraction rules
-
-- Deep learning: learned features representations
-
-- Predictions as downstream features
-  - Example: "is there a pedestrian?" can be used as a feature for automatic breaking
 ---
 # The iris dataset
 
